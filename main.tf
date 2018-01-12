@@ -22,7 +22,7 @@ resource "aws_cloudfront_distribution" "main" {
   }
 
   is_ipv6_enabled = true
-  price_class     = "PriceClass_200"
+  price_class     = "PriceClass_All"
 
   default_cache_behavior {
     allowed_methods = [
@@ -58,7 +58,7 @@ resource "aws_cloudfront_distribution" "main" {
 
   viewer_certificate {
     acm_certificate_arn      = "${var.acm_certificate_arn}"
-    minimum_protocol_version = "TLSv1"
+    minimum_protocol_version = "TLSv1.1_2016"
     ssl_support_method       = "sni-only"
   }
 
