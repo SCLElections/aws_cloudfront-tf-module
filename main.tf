@@ -46,7 +46,7 @@ resource "aws_cloudfront_distribution" "main" {
       query_string = true
 
       cookies {
-        forward = "none"
+        forward = "all"
       }
     }
 
